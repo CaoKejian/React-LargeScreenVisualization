@@ -4,6 +4,7 @@ import headerBg from '../images/header.png'
 import * as echarts from 'echarts'
 import { Chart1 } from '../components/charts_1';
 import { Chart2 } from '../components/charts_2';
+import { Chart3 } from '../components/charts_3';
 
 export const px = (n) => n / 2420 * (window as any).pageWidth
 export const Home = () => {
@@ -16,14 +17,16 @@ export const Home = () => {
           <Chart1 />
           <Chart2 />
         </section>
-        <section className='bordered section2'>
+        <section className='section2'>
+          <Chart3 />
         </section>
-        <section className='bordered section3'></section>
+        <section className='bordered section3'>
+        </section>
         <section className='bordered section4'></section>
         <section className='bordered section5'></section>
       </main>
       <footer>
-        
+
       </footer>
     </div>
   );
