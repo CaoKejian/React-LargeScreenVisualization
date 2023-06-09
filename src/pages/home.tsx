@@ -6,6 +6,8 @@ import { Chart1 } from '../components/charts_1';
 import { Chart2 } from '../components/charts_2';
 import { Chart3 } from '../components/charts_4';
 import { Chart4 } from '../components/charts_3';
+import { Chart5 } from '../components/charts_5';
+import { Chart6 } from '../components/charts_6';
 
 export const px = (n) => n / 2420 * (window as any).pageWidth
 export const Home = () => {
@@ -23,9 +25,13 @@ export const Home = () => {
           <Chart4 />
         </section>
         <section className='bordered section3'>
+          <Chart5 />
         </section>
-        <section className='bordered section4'></section>
-        <section className='bordered section5'></section>
+        <section className='section4'>
+          <Chart6 />
+        </section>
+        <section className='bordered section5'>
+        </section>
       </main>
       <footer>
 
