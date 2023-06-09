@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './home.scss';
 import headerBg from '../images/header.png'
-import * as echarts from 'echarts'
 import { Chart1 } from '../components/charts_1';
 import { Chart2 } from '../components/charts_2';
 import { Chart3 } from '../components/charts_4';
@@ -12,6 +11,7 @@ import { Chart7 } from '../components/charts_7';
 import { Chart8 } from '../components/charts_8';
 import { Chart9 } from '../components/charts_9';
 import { Chart10 } from '../components/charts_10';
+import { Chart11 } from '../components/charts_11';
 
 export const px = (n) => n / 2420 * (window as any).pageWidth
 export const Home = () => {
@@ -47,6 +47,7 @@ export const Home = () => {
             <h2>案发类型统计</h2>
             <div className="charts">
               <Chart10 />
+              <Chart11 />
             </div>
           </div>
           <div className="bordered row2 案发街道">
