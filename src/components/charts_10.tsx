@@ -4,9 +4,18 @@ import { px } from '../pages/home';
 
 export const Chart10 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null);
+  const data = [40, 22, 20, 18, 32]
+
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption({
+    setInterval(() => {
+      const xxx = Number(Math.random().toFixed(1)) * 30
+      const newData = [xxx, 18, xxx, 40, xxx]
+      x(newData)
+    }, 1000)
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption({
       color: '#F7A110',
       grid: {
         x: px(60),
@@ -42,7 +51,7 @@ export const Chart10 = () => {
       },
       series: [{
         type: 'bar',
-        data: [40, 22, 20, 18, 32],
+        data: data,
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
           offset: 0,
           color: '#0A97FB'
@@ -52,8 +61,11 @@ export const Chart10 = () => {
         }]),
       }]
     })
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data)
   }, [])
-
   return (
     <div ref={divRef} className="chart">
 

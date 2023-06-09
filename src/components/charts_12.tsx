@@ -4,6 +4,7 @@ import { px } from '../pages/home';
 
 export const Chart12 = () => {
   const divRef = useRef(null);
+  const myChart = useRef(null)
   const data = [
     { value: 0.08, name: '东岗路' },
     { value: 0.06, name: '段家滩' },
@@ -16,8 +17,24 @@ export const Chart12 = () => {
     { value: 0.08, name: '天水路' },
   ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    myChart.setOption({
+    setInterval(() => {
+      const xxx = (Math.random().toFixed(2))
+      const newData = [
+        { value: xxx, name: '东岗路' },
+        { value: 0.06, name: '段家滩' },
+        { value: 0.11, name: '雁北' },
+        { value: xxx, name: '五泉山' },
+        { value: 0.12, name: '中山路' },
+        { value: 0.06, name: '庆阳路' },
+        { value: xxx, name: '武都路' },
+        { value: 0.08, name: '酒泉路' },
+        { value: 0.08, name: '天水路' },
+      ]
+      x(newData)
+    }, 1000)
+  }, [])
+  const x = (data) => {
+    myChart.current.setOption({
       xAxis: { show: false },
       yAxis: { show: false },
       grid: { x: 0, x2: 0, y: 0, y2: 0, containLabel: true },
@@ -51,13 +68,17 @@ export const Chart12 = () => {
         }
       ]
     })
+  }
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    x(data)
   }, [])
 
   return (
     <div className="年龄段-图1">
-    <div className="chart">
-      <div className="main" ref={divRef}/>
+      <div className="chart">
+        <div className="main" ref={divRef} />
+      </div>
     </div>
-  </div>
   );
 };
