@@ -62,12 +62,12 @@ export const Home = () => {
           </div>
           <div className="bordered row3 作案手段">
             <h2>作案手段分析</h2>
-            <Chart14/>
+            <Chart14 />
           </div>
         </section>
       </main>
       <footer>
-
+        豫ICP备2023004318号
       </footer>
     </div>
   );
