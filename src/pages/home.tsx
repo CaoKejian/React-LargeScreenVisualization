@@ -8,6 +8,9 @@ import { Chart3 } from '../components/charts_4';
 import { Chart4 } from '../components/charts_3';
 import { Chart5 } from '../components/charts_5';
 import { Chart6 } from '../components/charts_6';
+import { Chart7 } from '../components/charts_7';
+import { Chart8 } from '../components/charts_8';
+import { Chart9 } from '../components/charts_9';
 
 export const px = (n) => n / 2420 * (window as any).pageWidth
 export const Home = () => {
@@ -29,6 +32,14 @@ export const Home = () => {
         </section>
         <section className='section4'>
           <Chart6 />
+          <div className="bordered 年龄段">
+            <h2>犯罪人员年龄段分布</h2>
+            <div className="charts">
+              <Chart7 />
+              <Chart8 />
+              <Chart9 />
+            </div>
+          </div>
         </section>
         <section className='bordered section5'>
         </section>
